@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+
+<script>
+function myFunction(param) {
+	value = param
+	console.log(value);
+	images = ['aquarius.jpg', 'pisces.jpg', 'aries.jpg', 'taurus.jpg', 'gemini.jpg', 'cancer.jpg', 'leo.jpg', 'virgo.jpg', 'libra.jpg', 'scorpio.jpg', 'sagittarius', 'capricorn.jpg'];
+	text = '';
+
+	switch(value) {
+		case 0:
+			text = "Progressive, original, independent, humanitarian";
+			break;
+		case 1: 
+			text = "Compassionate, artistic, intuitive, gentle, wise, musical";
+			break;
+		case 2: 
+			text = "Oh yeah, make sure your date knows you won't even fit in a box. Your spirit animal is:";
+			break;
+		case 3: 
+			text = "Sticking with the traditional. A very solid scaredy cat plan. Your spirit animal is:";
+			break;
+		case 4:
+			text = "Going with some classic hipster action to hide your vulnerabilities. Your spirit animal is:";
+			break;
+		default:
+			"Sticking with classic hipster to be sure it takes a while before your date finds out you are not hip. Your spirit animal is"
+	}
+
+	document.getElementById("spirittext").innerHTML= text;
+	document.getElementById("animal").src= images[value];
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="main">
+
+	<div id="mainbody">
+		<h1>Choose Your Zodiac and know your strength</h1>
+        <button onclick="newZFunction()">AQUARIUS</button><br/>
+         <button onclick="newZFunction2()">PISCES</button><br/>
+         <button onclick="newZFunction3()">ARIES</button><br/>
+         <button onclick="newZFunction4()">TAURUS</button><br/>
+         <button onclick="newZFunction5()">GEMINI</button><br/>
+         <button onclick="newZFunction6()">CANCER</button><br/>
+         <button onclick="newZFunction7()">LEO</button><br/>
+         <button onclick="newZFunction8()">VIRGO</button><br/>
+         <button onclick="newZFunction9()">LIBRA</button><br/>
+         <button onclick="newZFunction10()">SCORPIO</button><br/>
+         <button onclick="newZFunction11()">SAGITTARIUS</button><br/>
+         <button onclick="newZFunction12()">CAPRICORN</button><br/>
+        
+
+	</div>
+
+
+
+	<div id="Strength">
+		<h3>Strength</h3>
+		<p id="answer"></p>
+		<p id="spirittext"></p>
+		<img id="animal" src="">
+	</div>
+
+</div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>

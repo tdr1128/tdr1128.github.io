@@ -1,0 +1,55 @@
+<html>
+<head>
+    </head>
+        <meta charset ='ut-8'>
+    <body>
+    
+    <h1>Find your spirit animal</h1>
+     <button onclick="dateChoice(1)">Click Me</button>
+        <button onclick="dateChoice(2)">Click Me</button>
+       
+       
+        <div id='mytextbox'></div>
+        
+        
+        <script>
+            
+            function dateChoice(value)
+            {   //assign the parameter passed to the function to a variable
+                choiceVal = value;
+                
+                //conside using arrays for items you might need to call repeatedly
+                //for this function, using an array also means you can use the 
+                switch(choiceVal);
+                {
+                    case 0:
+                        alert('a dog');
+                    case 1:
+                        alert('a cat');
+                    case 2: 
+                        alert('a turtle');
+                    default:
+                        alert('a dog of course');
+                }
+            }
+            
+            function firstFunction() 
+            {
+                alert ('the button is clicked');
+                console.log('the button is clicked');
+                document.getElementById('mytextbox').innerHTML='<h2>adding some text now</h>';
+            }
+            
+             function secondFunction() 
+            {
+                alert ('the button is clicked');
+                console.log('the button is clicked');
+                document.getElementById('mytextbox').innerHTML='<h1>Now I have 2 functions</h1>';
+            }
+        </script>
+    
+    
+    </body>
+
+
+</html>
