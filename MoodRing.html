@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <style>
+
+body {
+	background-color: #FFF278;
+}
+
+</style>
+    
+    </head>
+    
+    <body style="background-color: rgb(234, 82, 70);">
+
+	<h1>My Mood Ring</h1>
+
+	<button id="moodButton" onclick="changeMood()" value="0">Change my mood</button>
+
+        <div id="moodStatement">Passionate person today</div>
+
+    <script>
+text =""
+function changeMood(){
+	button = document.getElementById("moodButton")
+	if (button.value == '0') {
+        text ="Mixed Emotions";
+		document.getElementById('moodStatement').innerHTML = text
+		document.body.style.backgroundColor = "rgb(119, 193, 45)";
+		button.value = '1';
+	}
+    
+    else if (button.value == '1')
+    {
+        text = "Fear";
+		document.getElementById('moodStatement').innerHTML = text;
+				document.body.style.backgroundColor = "rgb(103, 11, 4)";
+		button.value = '2';
+    }
+        
+        
+    else if (button.value == '2')
+    {
+        text = "Calm";
+		document.getElementById('moodStatement').innerHTML = text;
+				document.body.style.backgroundColor = "rgb(7, 22, 88)";
+		button.value = '3';
+    }
+        
+    else if (button.value == '3'){
+        text = "Cool";
+		document.getElementById('moodStatement').innerHTML = text;
+				document.body.style.backgroundColor = "rgb(124, 6, 129)";
+		button.value = '4';
+	}
+    
+    else if (button.value == '4'){
+        text = "Passion";
+		document.getElementById('moodStatement').innerHTML = text;
+				document.body.style.backgroundColor = "rgb(8, 141, 110)";
+		button.value = '5';
+	}
+    
+    else if (button.value == '5'){
+        text = "Very Happy";
+		document.getElementById('moodStatement').innerHTML = text;
+				document.body.style.backgroundColor = "rgb(53, 37, 119)";
+        button.value ='6';
+		
+	}
+    
+    else if (button.value == '6'){
+        text = "Normal";
+		document.getElementById('moodStatement').innerHTML = text;
+				document.body.style.backgroundColor = "rgb(95, 157, 242)";
+        button.value ='7';}
+    
+    else if (button.value == '7'){
+        text = "Stressed";
+		document.getElementById('moodStatement').innerHTML = text;
+				document.body.style.backgroundColor = "rgb(27, 27, 28)";
+        button.value ='0';}
+		
+    else 
+    {
+        text ="Romance";
+        document.getElementById('moodstatement').innerHTML = text;
+        document.body.style.backgroundColor ="rgb(17, 160, 22)";
+        button.value ='0';
+    }
+}
+
+
+</script>
+
+    
+    </body>
+
+
+
+
+</html>
