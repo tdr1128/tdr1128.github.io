@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		
+		h1{ color: 'Blue';
+			text-align: center;
+			font-size: 45px;}
+
+			background { color: 'Yellow';}
+			p{ font-size: 23px;}
+			
+
+	</style>
+	<h1>Alien Being Catalog</h1>
+
+</head>
+
+
+<body>
+	<script>
+		function AlienBeing (name, skinColor, eyeColor, clothing, weapon, spaceship)
+		{
+			this.name = name;
+			this.skinColor= skinColor;
+			this.eyeColor = eyeColor;
+			this.clothing = clothing;
+			this.spaceship = spaceship;
+			this.notice = function () 
+				{
+					alert (this.name + ' has ' + this.eyeColor + ' with ' + this.skinColor + ' tone ' + ' wearing ' + this.clothing + ' rides ' + ' on ' + this.spaceship)
+				}
+		
+	
+		}
+
+		var objAlienConstructor = new AlienBeing ('Xavier', 'Blue', 'Dark Green', 'X23F' , 'F456');
+		objAlienConstructor.notice(); 
+
+	</script>
+
+
+
+</body>
+
+
+</html>
