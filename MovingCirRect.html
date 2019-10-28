@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MOVING CIRCLES AND RECTACLES</title>
+
+	<style type="text/css">
+
+		h1{
+			color: blue;
+			text-align: center;
+			font-size: 50px;
+		}
+
+		.button {
+ 				 background-color: #f44336;;
+  				border: none;
+  				color: white;
+  				padding: 15px 32px;
+  				text-align: center;
+  				text-decoration: none;
+  				display: inline-block;
+  				font-size: 20px;
+  				margin: 4px 2px;
+  				cursor: pointer;
+		
+		canvas { border: 1px solid black; 
+				}
+	</style>
+	<h1>CIRCLES AND RECTANGLE CANVAS ART </h1>
+</head>
+<body>
+	<button class="button" onclick = "window.location.reload(true);">Move Cirles and Rectangles to different position</button>
+	<button class="button" onclick = "HowMany(100);">100 Objects</button>
+	<button class="button" onclick = "HowMany(50);">50 Objects</button>
+	<canvas></canvas>
+
+	
+		
+}
+
+	<script>
+		var canvas = document.querySelector('canvas');
+		//canvas size
+		canvas.width = 1000;
+		canvas.height = 1000;
+
+		var c = canvas.getContext('2d');
+
+	
+
+		//MAKE CIRCLE
+		function HowMany(x) {
+
+		
+		for ( var i = 0; i < x; i++){
+			var x = Math.random() * 1000;
+			var y = Math.random() * 1000;
+		c.beginPath();
+		c.arc(x, y, 30, 0, Math.PI * 2, false);
+		//change to different color
+		c.strokeStyle = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+		c.stroke();
+		
+		//create rectangle
+		c.strokeRect(x, y, 100, 100);
+
+		}
+	}
+
+	</script>
+
+</body>
+
+</html>
