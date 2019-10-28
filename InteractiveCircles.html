@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Interactive Circles</title>
+
+	<style type="text/css">
+		h1 {
+				text-align: center;
+				color: rgba(0, 255, 0, 0.9);
+				font-weight: 50px;
+				text-indent: center;
+				font-family: Helvettica;
+
+		}
+
+		h3{
+			text-align: center;
+			color: blue;
+		}
+		
+		canvas { border: 3px solid black;
+				 background-color: 'red' }
+	
+
+
+	</style>
+	<h1>WELCOME TO BOUNCING CIRCLES ART PIECE</h1>
+	<h3>BUTTON BELOW TO CHANGE CIRCLES COLOR</h3>
+
+</head>
+		
+
+
+<body>
+	
+
+	
+
+	<button onclick = "CreateRed()">Change to Red circles</button>
+	<button onclick = "CreateBlue()">Change to Blue circles</button>
+	<button onclick = "CreateGreen()">Change to Green circles</button>
+	<button onclick = "CreateYellow()">Change to Yellow circles</button>
+
+
+
+	<canvas></canvas>
+
+
+	<script type="text/javascript">
+		var canvas = document.querySelector('canvas');
+		canvas.width = 1000;
+		canvas.height = 1000;
+
+		var c = canvas.getContext('2d');
+
+
+					function CreateRed()
+					{
+						c.strokeStyle='rgba(255, 0, 0, 1)';	//create Red circles
+					}
+
+					function CreateBlue()
+					{
+						c.strokeStyle='rgba(5, 26, 255, 1)';	//create Blue circles
+
+					}
+
+					function CreateGreen()
+					{
+						c.strokeStyle='rgba(58, 204, 0, 1)';	//create Green circles
+
+					}
+					function CreateYellow()
+					{
+						c.strokeStyle='rgba(255, 238, 5, 1)';	//create Yellow circles
+
+					}
+		
+		
+		//constructor to create one circle
+
+		function Circle(x, y, dx, dy, radius)
+		{
+			this.x  = x; 	//x value
+			this.y = y;		// y value
+			this.dx = dx;	//x velocity
+			this.dy = dy; 	//y velocity
+			this.radius = radius;
+
+			this.draw = function ()					//draw a circle
+			{
+				c.beginPath();
+				c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+
+				
+			
+					
+				
+				c.stroke();
+			}
+
+			//update function for x and y directions where circle bounce within canvas
+			this.update = function ()
+			{
+				if (this.x  + this.radius > 1000  || this.x - this.radius < 0)
+				{
+
+					this.dx = -this.dx;
+				}
+
+				if ( this.y + this.radius > 1000 || this.y - this.radius < 0)
+				{
+					this.dy = -this.dy;
+				}
+
+				this.x += this.dx;
+				this.y += this.dy;
+
+				this.draw();
+			}
+		}
+
+		var CircleArray = []; 				//store all circles in an array
+
+		for ( var i = 0; i < 100; i++)
+
+		{
+			var radius = 77;
+			var x = Math.random() * (1000 - radius * 2) + radius;
+			var y = Math.random() * (1000 - radius * 2) + radius;
+			var dx = Math.random() - 4;
+			var dy = Math.random() - 4;
+			;
+
+				CircleArray.push(new Circle(x, y, dx, dy, radius));		//create bouncy circles
+				
+		}
+	
+		
+
+		
+	
+
+
+	function animate ()
+	{
+		requestAnimationFrame(animate);
+		
+		c.clearRect(0, 0, 1000, 1000);
+
+		for ( var i = 0; i < CircleArray.length; i ++)
+		{
+			CircleArray[i].update();  //create bouncy circles
+		}
+		
+		 	
+	}
+	animate ();
+
+
+
+
+
+
+
+
+
+		
+
+
+	</script>
+
+</body>
+</html>
