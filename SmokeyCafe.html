@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <h1>BigMusicClubConclomerate</h1>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion({ header: "h2", collapsible: true, active: false });
+  } );
+  </script>
+
+	
+	<style type="text/css">
+		h1{
+			padding: 10px;
+			text-align: center;
+			background-color: red;
+			border: 2px;
+			font-size: 45px;
+		}
+
+		h2{
+			padding: 10px;
+			text-align: center;
+			background-color: red;
+			border: 2px;
+			font-size: 23px;
+		}
+
+		#accordion{
+			padding: 5px;
+			text-align: left;
+			background-color: yellow;
+			border: 1px;
+			font-size: 13px;
+
+		}
+		p{
+			font-size: 16px;
+			color: blue;
+		}
+		
+
+
+
+	</style>
+</head>
+<body>
+	<div id="accordion">
+		
+		<h2>BIG HALL </h2>
+			<div>
+			<p>Welcome to Big Hall</p>
+			</div>
+
+	
+		<h2>SMOKEY CLUB</h2>
+			<div>
+				<p>Welcome to Smokey Club</p>
+			</div>
+	
+
+		<h2>LITTLE CAFE</h2>
+			<div>
+				<p>Welcome to Little Cafe</p>
+
+			</div>
+
+	</div>
+
+
+</body>
+</html>
