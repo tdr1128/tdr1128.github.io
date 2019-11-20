@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<script> 
+dog = $.get("https://dog.ceo/api/breed/hound/images")
+
+
+$( document ).ready(function() {
+    
+    $.get("https://dog.ceo/api/breed/hound/images", function(data, status){
+	if (status == 'success')
+	{
+		alert(status);
+	}
+	else {
+		alert('no success');
+	}
+	dogBreeds(data);
+}); 
+    function dogBreeds(data) {
+	
+	dogs = data['message'];
+	for (x in dogs) 
+    {
+        
+			img = "<img src='" + dogs[x] + "'><br>"
+			$( "#dogs" ).append(img);
+		};
+}
+
+
+});
+
+</script>
+  
+
+</head>
+<body>
+      <style>
+        div.dogs{
+            padding: 15px;
+           float: left;
+        }
+        h1{
+            text-decoration-color: aqua;
+        }
+    
+    </style>
+
+<h1>Dog Breeds </h1>
+    <h2>HERE ARE LIST OF IMAGES OF HOUNDS</h2>
+    
+<div id="dogs"></div>
+
+</script>
+
+</body>
+</html>
+       
