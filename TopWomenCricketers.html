@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
       <script>
- 
+      $( function() {
     $( "#accordion" ).accordion({
       collapsible:true;
       event:click;
@@ -19,7 +19,8 @@
       heightStyle:true;
       icons:{header:"ui-icon-plus",activeHeader:"ui-icon-minus"};
       
-  } );
+       });                      
+      });
   </script>
     </head>
     
