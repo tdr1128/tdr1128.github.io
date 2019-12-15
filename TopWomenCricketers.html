@@ -12,7 +12,13 @@
   
       <script>
   $( function() {
-    $( "#accordion" ).accordion();
+    $( "#accordion" ).accordion({
+      collapsible:true;
+      event:click;
+      animate:400;
+      heightStyle:true;
+      icons:{header:"ui-icon-plus",activeHeader:"ui-icon-minus"};
+      
   } );
   </script>
     </head>
@@ -73,7 +79,7 @@ li.complete a {
 <div id="accordion">
       
   <h3>TOP 10 BATTING CRICKETERS</h3>
-    <div>
+    <div id="batting">
 
      
         
@@ -91,7 +97,7 @@ li.complete a {
     
 <h3>TOP 10 BOWLING CRICKETERS</h3>
   
-  <div>
+  <div id:"bowling">
      
         	<li>J.L. Jonassen	AUS</li>	
             <li>M. Schutt-AUSTRALIA</li>
@@ -106,7 +112,7 @@ li.complete a {
         
 </div>
     <h3>TOP 10 ALLROUNDERS</h3>
- <div>
+ <div id:"allrounders">
 
   
         <li>E.A. Perry-AUSTRALIA</li>
