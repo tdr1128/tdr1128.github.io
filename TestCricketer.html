@@ -10,13 +10,21 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#accordion" ).accordion({
-      heightStyle: "content"
-    });
-  } );
+ 
+    $(document).ready(function(){
+  $("h3").click(function(){
+    
+      $("#batting").slideToggle("slow");
+      
+      $("#bowling").slideToggle("slow");
+      
+      $("#allrounder").slideToggle("slow");
+  });
+});
+      
+ 
   </script>
-  
+ 
     <script> 
  var cricketRequest = new XMLHttpRequest();
   cricketRequest.open('GET','https://tdr1128.github.io/json/ICCWomenCricketersRanking.json' );
@@ -79,7 +87,7 @@
         color:aquamarine;
         font-display: block;
         font-family: sans-serif;
-        width: 300px;
+        width: ;
         text-decoration: 
     }
     div{
@@ -89,28 +97,30 @@
      
      
     }
-    div#batting{
+    #batting{
       
       background-color: #FFFFAA;
       color:#04400;
       text-align: center;
       padding:10px;
     }
-    div#bowling{
+  #bowling{
       
       background-color: #70A897;
       color:#801515;
       text-align: center;
       padding:10px;
     }
-    div#allrounder{
+   #allrounder{
       
       background-color: #EF9FAF;
       color:#311557;
       text-align: center;
       padding:10px;
     }
-
+    #accordion{
+        background-color: #210f0f;
+    }
 
 
 
@@ -124,14 +134,20 @@
 <h1>TOP WOMEN CRICKETERS' RANKING IN THE WORLD</h1>
 
 
-<div id="accordion"></div>
+<div id="ICCcricketers"></div>
    
-  <h3>TOP BATTING CRICKETERS</h3>
-  <div id="batting"></div>
+  <h3 >TOP BATTING CRICKETERS</h3>
+
+      <div id="batting"></div>
+
   <h3>TOP BOWLING CRICKETERS</h3>
-  <div id="bowling"> </div>
+
+    <div id="bowling"></div>
+  
   <h3>TOP ALL-AROUND CRICKETERS</h3>
-  <div id="allrounder"></div>
+ 
+    <div id="allrounder"></div>
+  
 </div>
 
 

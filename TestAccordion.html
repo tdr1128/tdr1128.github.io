@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HowToCreate Series | Menu | Animated Accordion</title>
+	<meta charset="utf-8">
+
+	<!-- To ensure proper rendering and touch zooming in Mobile Phones -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <script> 
+ var cricketRequest = new XMLHttpRequest();
+  cricketRequest.open('GET','https://tdr1128.github.io/json/ICCWomenCricketersRanking.json' );
+  cricketRequest.onload = function()
+ {
+    var crickData=JSON.parse(cricketRequest.responseText);
+        var battingContainer = document.getElementById("batting");
+  var bowlingContainer = document.getElementById("bowling");
+  var allroundContainer = document.getElementById("allrounder");
+  
+      for(i = 0; i < crickData.length; i++)
+          {
+              if(crickData[i].BATTING > 670)
+                 { 
+                       battingContainer.insertAdjacentHTML('afterbegin', crickData[i].NAME + "  -  " +crickData[i].COUNTRY + "  - " + crickData[i].BATTING + '<br />') ;
+                    
+                  }
+              if(crickData[i].BOWLING > 600)
+                 { 
+                      bowlingContainer.insertAdjacentHTML('afterbegin', crickData[i].NAME + "  -  " +crickData[i].COUNTRY + "  - " + crickData[i].BOWLING+'<br />') ;
+                   
+                  }
+              if(crickData[i].ALLROUNDER > 200)
+                 { 
+                       allroundContainer.insertAdjacentHTML('afterbegin', crickData[i].NAME + "  -  " +crickData[i].COUNTRY + "  - " + crickData[i].ALLROUNDER+'<br />') ;
+                     console.log(crickData[i].NAME + "  -  " +crickData[i].COUNTRY + "  - " + crickData[i].ALLROUNDER);
+                  }
+          }
+   };
+  cricketRequest.send();
+
+    </script>
+	<style>
+		/* Style the buttons that are used to open and close the accordion panel */
+		.accordion {
+		    background-color: #8fb7a5;
+		    color: #FFF;
+		    cursor: pointer;
+		    padding: 18px;
+		    width: 100%;
+		    text-align: left;
+		    border: 1px solid white;
+		    outline: none;
+		    transition: 0.4s;
+		    font: 20px Lato, sans-serif;
+		}
+
+		/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+		.active, .accordion:hover {
+		    background-color: #527e6a;
+		}
+
+		/* Style the accordion panel. Note: hidden by default */
+		.panel {
+		    padding: 0 18px;
+		    background-color: white;
+		    max-height: 0;
+		    overflow: hidden;
+		    transition: max-height 0.2s ease-out;
+		}
+
+		p{
+			font: 16px Lato, sans-serif; 
+		}
+
+		.accordion:after {
+		    content: '\02795'; /* Unicode character for "plus" sign (+) */
+		    font-size: 13px;
+		    float: right;
+		    margin-left: 5px;
+		}
+
+		.active:after {
+		    content: "\2796"; /* Unicode character for "minus" sign (-) */
+		}
+	</style>
+</head>
+<body>
+    <h1>TOP WOMEN CRICKETERS' RANKING IN THE WORLD</h1>
+	<button class="accordion">TOP BATTING CRICKETERS</button>
+	<div id:"batting">
+	<p ></p>
+	</div>
+
+	<button class="accordion">TOP BOWLING CRICKETERS</button>
+	<div id:"bowling">
+	<p ></p>
+	</div>
+
+	<button class="accordion">TOP ALL-AROUND CRICKETERS</button>
+	<div  id:"allrounder">
+	<p></p>
+	</div>
+
+	<script type="text/javascript">
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+		  acc[i].addEventListener("click", function() {
+		    this.classList.toggle("active");
+		    var panel = this.nextElementSibling;
+		    if (panel.style.maxHeight){
+		      panel.style.maxHeight = null;
+		    } else {
+		      panel.style.maxHeight = panel.scrollHeight + "px";
+		    } 
+		  });
+		}
+</script>
+	</script>
+</body>
+</html>
