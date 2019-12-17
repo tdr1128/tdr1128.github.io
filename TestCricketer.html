@@ -52,7 +52,8 @@
       for(i = 0; i < crickData.length; i++)
           {
               if(crickData[i].BATTING > 670)
-                 { 
+                  
+                 {  
                        battingContainer.insertAdjacentHTML('afterbegin', crickData[i].NAME + "  -  " +crickData[i].COUNTRY + "  - " + crickData[i].BATTING + '<br />') ;
                     
                   }
@@ -94,11 +95,12 @@
         background-color: antiquewhite;
         text-align: center;
     }
-    h3{
+    h3{ background-color: #49a1ef;
+        
         color:aquamarine;
         font-display: block;
         font-family: sans-serif;
-        width: ;
+        width:50% ;
         text-decoration: 
     }
     div{
@@ -160,15 +162,16 @@
 
 <div id="ICCcricketers"></div>
    
-  <h3 >TOP BATTING CRICKETERS</h3>
+  <h3 >TOP BATTING CRICKETERS (NAME-COUNTRY-BATTING RANKING)</h3>
+    
+     
+      <div id="batting">Name - Country - Batting Ranking</div>
 
-      <div id="batting"></div>
-
-  <h3>TOP BOWLING CRICKETERS</h3>
+  <h3>TOP BOWLING CRICKETERS (NAME-COUNTRY-BATTING RANKING)</h3>
 
     <div id="bowling"></div>
   
-  <h3>TOP ALL-AROUND CRICKETERS</h3>
+  <h3>TOP ALL-AROUND CRICKETERS </h3>
  
     <div id="allrounder"></div>
   
