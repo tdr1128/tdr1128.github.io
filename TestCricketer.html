@@ -16,9 +16,23 @@
     
       $("#batting").slideToggle("slow");
       
+ 
+  });
+});
+       $(document).ready(function(){
+  $("h3").click(function(){
+    
       $("#bowling").slideToggle("slow");
       
+ 
+  });
+});
+       $(document).ready(function(){
+  $("h3").click(function(){
+    
       $("#allrounder").slideToggle("slow");
+      
+ 
   });
 });
       
@@ -57,9 +71,6 @@
   cricketRequest.send();
 
     </script>
-    
-    
-    
     
     
     
@@ -132,6 +143,19 @@
     </script>
     
 <h1>TOP WOMEN CRICKETERS' RANKING IN THE WORLD</h1>
+   <script>
+    
+    var currentdate = new Date(); 
+    var datetime = "Now: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
+       document.write(datetime);
+    </script>
+    
 
 
 <div id="ICCcricketers"></div>
